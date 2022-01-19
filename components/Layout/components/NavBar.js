@@ -1,11 +1,24 @@
-import React from "react";
-import { AiOutlineTwitter } from "react-icons/ai";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { AiOutlineDown, AiOutlineTwitter } from "react-icons/ai";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 import { MdOutlineMail } from "react-icons/md";
 import { SiLinkedin } from "react-icons/si";
+import { stateList } from "./constants";
+import Model from "./Model";
 
 const NavBar = () => {
+
+
+  const router = useRouter();
+  const [openModel, setOpenModel] = useState(false);
+
+  const getStateName = () => {
+    const slug = router.asPath.split("/")[1];
+    return stateList[slug];
+  };
+
   return (
     <div>
       <div className="flex flex-col fixed min-w-full">
@@ -18,31 +31,30 @@ const NavBar = () => {
                   <tr>
                     <td className=" py-4 ">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-8 w-16"></div>
-                        <div className="">
-                          <div className="text-xl text-white  text-bold border border-8 border-light-blue-500 ...  flex-auto flex space-x-4">
-                            <button
-                              className=" flex items-center justify-center rounded-md  text-white"
-                              type="submit"
-                            >
-                              DELHI
-                            </button>
-                            <div className="flex flex-row col-md-auto  items-center ">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </div>
+                        <div className="flex-shrink-0 h-8 w-40"></div>
+
+                        <div className="text-xl text-white  text-bold border border-8 border-light-blue-500 ...   flex space-x-4">
+                          <button
+                            className=" flex items-center justify-center rounded-md  text-white"
+                            type="submit"
+                            onClick={() => {
+                              setOpenModel(true);
+                            }}
+                          >
+                            {getStateName() || "select State"}
+                          </button>
+                          <div
+                            className="flex items-center justify-center "
+                            onClick={() => {
+                              setOpenModel(true);
+                            }}
+                          >
+                            <AiOutlineDown />
                           </div>
                         </div>
+                        {openModel && (
+                          <Model closeModel={setOpenModel} />
+                        )}
                       </div>
                     </td>
                     <td className=" flex flex-row col-md-auto px-8 py-6  align-center items-center  width: 200px ">

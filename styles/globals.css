@@ -32,7 +32,7 @@ a {
   /* padding: 20px; */
   margin: auto !important;
   /* margin:10px; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .image-container1 {
   display: flex;
@@ -344,7 +344,7 @@ border-radius: 0.125rem;
   z-index: 10;
   font-family: "Source Sans Pro", sans-serif;
 }
-a {
+.social {
   text-decoration: none;
   width: 210px;
   /* background: #3b5999; */
@@ -361,7 +361,7 @@ a {
   -webkit-transition: 0.5s linear;
   -ms-transition: 0.5s linear;
 }
-a i {
+.social i {
   padding-left: 20px;
   font-size: 30px !important;
   animation: letszoom 3s linear alternate-reverse infinite !important;
@@ -388,7 +388,7 @@ a i {
   background: #fffc00;
 }
 
-a:hover {
+.social:hover {
   transform: translateX(0);
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);

@@ -46,13 +46,15 @@ const Parties = () => {
             </div>
             <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div className="card_popular_container_2">
-             <Link href="inc"><img
-                  className="w-32 h-38  md:w-30 md:h-6rem md:rounded rounded-full mx-auto "
-                  src="https://www.electwise.in/media/images/parties/logo/indian-national-congress.png"
-                  alt=""
-                  width="220"
-                  height="220"
-                /></Link>
+                <Link href="inc">
+                  <img
+                    className="w-32 h-38  md:w-30 md:h-6rem md:rounded rounded-full mx-auto "
+                    src="https://www.electwise.in/media/images/parties/logo/indian-national-congress.png"
+                    alt=""
+                    width="220"
+                    height="220"
+                  />
+                </Link>
               </div>
               <div className="text-center ">
                 <p className="text-l w-36 text-black font-bold mb-2">INC</p>
@@ -60,13 +62,15 @@ const Parties = () => {
             </div>
             <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div className="card_popular_container_2">
-           <Link href="aitc"><img
-                  className="w-32 h-38  md:w-30 md:h-6rem md:rounded rounded-full mx-auto "
-                  src="https://www.electwise.in/media/images/parties/logo/all-india-trinamool-congress.png"
-                  alt=""
-                  width="220"
-                  height="220"
-                /></Link>
+                <Link href="aitc">
+                  <img
+                    className="w-32 h-38  md:w-30 md:h-6rem md:rounded rounded-full mx-auto "
+                    src="https://www.electwise.in/media/images/parties/logo/all-india-trinamool-congress.png"
+                    alt=""
+                    width="220"
+                    height="220"
+                  />
+                </Link>
               </div>
 
               <div className="text-center ">

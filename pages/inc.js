@@ -5,23 +5,14 @@ import { ImFacebook } from "react-icons/im";
 import { AiOutlineTwitter, AiOutlineWifi } from "react-icons/ai";
 import { FaWikipediaW } from "react-icons/fa";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
-import NavBar from "../components/NavBar";
-import MenuBar from "../components/MenuBar";
 
-import SearchBar from "../components/SearchBar";
-import Footer from "../components/Footer";
-import Social from "../components/Social";
 import Layout from "../components/Layout";
 
 const inc = () => {
   return (
     <Layout>
       <div>
-        <MenuBar />
-        <Social />
-        <div>
-          <SearchBar />
-        </div>
+
 
         <div className=" grid grid-cols-1  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 pl-10 pr-10 pb-10 ">
           {/* grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 */}
@@ -56,127 +47,7 @@ const inc = () => {
                 </p>
               </div>
             </div>
-            {/* <div className="bg-white p-2 w-full max-w-6xl sm:w-full h-20  mt-2.5  shadow-lg flex flex-col sm:flex-row  select-none">
-            <div className="text-left   w-full">
-              <h2 className="text-base font-bold  border-b-2 text-xl">Born</h2>
-              <p className="text-gray-500 flex  sm:text-base line-clamp-3 ">
-                July 16, 1968 in Siwani, Hisar, Haryana
-              </p>
-            </div>
-          </div>
 
-          <div className="bg-white p-2 w-full max-w-6xl sm:w-full sm:p-4 mt-2.5  h-auto  shadow-lg flex flex-col sm:flex-row  select-none">
-            <div className="text-left   w-full">
-              <h2 className="text-base font-bold  border-b-2 text-xl">
-                Education
-              </h2>
-              <p className="text-gray-500 flex  sm:text-base line-clamp-3 ">
-                Graduate Professional/B.Tech, Mechnical Engineering, IIT
-                Kharagpur,1989
-              </p>
-            </div>
-          </div>
-          <div className="bg-white p-2 w-full max-w-6xl sm:w-full sm:p-4 mt-2.5 h-28  shadow-lg flex flex-col sm:flex-row  select-none">
-            <div className="text-left   w-full">
-              <h2 className="text-base font-bold  border-b-2 text-xl">
-                Government Positions Held
-              </h2>
-              <p className="text-gray-500 flex  sm:text-base line-clamp-3 ">
-                Chief Minister of Delhi (Present)
-              </p>
-              <p className="text-gray-500 flex  sm:text-base line-clamp-3 ">
-                Chief Minister of Delhi
-              </p>
-            </div>
-          </div>
-          <div className="bg-white p-2 w-full max-w-6xl sm:w-full sm:p-4 mt-2.5 h-auto w-auto shadow-lg flex flex-col sm:flex-row  select-none">
-            <div className="text-left   w-full">
-              <h2 className="text-base font-bold  border-b-2 text-xl">
-                Party Positions Held
-              </h2>
-              <p className="text-gray-500 flex  sm:text-base line-clamp-3 ">
-                Aam Aadmi Party - President
-              </p>
-            </div>
-          </div> */}
-            {/* <div className="bg-white p-2 w-full max-w-6xl sm:w-full sm:p-4 mt-2.5 h-auto w-auto shadow-lg flex flex-col sm:flex-row  select-none">
-            <div className="text-left   w-auto">
-              <h2 className="text-base font-bold  border-b-2 text-l">
-                Election History
-              </h2>
-              <p className="text-gray-500 flex  w-auto sm:text-base line-clamp-3 ">
-                Delhi - 2020 - New Delhi (Delhi - New Delhi - Assembly) Delhi -
-                2015 - New Delhi (Delhi - New Delhi - Assembly) Lok Sabha - 2014
-                - Varanasi (Uttar Pradesh - None - Lok Sabha) Delhi - 2013 - New
-                Delhi (Delhi - New Delhi - Assembly)
-              </p>
-              <div className="inline-block w-auto flex overflow-hidden   pt-1 rounded-bl-lg rounded-br-lg">
-                <table className="min-w-full  ">
-                  <thead className="bg-gray-800 text-white">
-                    <tr>
-                      <th className="px-1 border-b-2 border-gray-300 text-left text-sm leading-6 text-blue-500">
-                        Election
-                      </th>
-                      <th className="px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Party
-                      </th>
-                      <th className=" px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Result
-                      </th>
-                      <th className=" px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Position
-                      </th>
-                      <th className=" px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Votes Polled
-                      </th>
-                      <th className="px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Votes polled
-                      </th>
-                      <th className="px-1  border-b-2 border-gray-300 text-left text-sm leading-9 text-blue-500 tracking-wider">
-                        Margin
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-700">
-                    <tr>
-                      <td className="w-1/12 text-left  px-1">New</td>
-                      <td className="w-1/4text-left  px-1">AAP</td>
-                      <td className="w-1/12 text-left px-1">Won</td>
-                      <td className="w-1/12 text-left  px-1">1</td>
-                      <td className="w-1/12 text-left  px-1">46,758</td>
-                      <td className="w-1/12 text-left px-1"></td>
-                      <td className="w-1/12 text-left  px-1">21,697</td>
-                    </tr>
-                    <tr className="bg-gray-100">
-                      <td className="w-1/12 text-left  px-1 ">New</td>
-                      <td className="w-1/12 text-left  px-1">AAP</td>
-                      <td className="w-1/12 text-left  px-1 ">Won</td>
-                      <td className="w-1/12 text-left  px-1 "></td>
-                      <td className="w-1/12 text-left  px-1 "></td>
-                      <td className="w-1/12 text-left  px-1 "></td>
-                      <td className="w-1/12 text-left px-1">31,583</td>
-                    </tr>
-                    <tr>
-                      <td className="w-1/12 text-left  px-1">Varanasi</td>
-                      <td className="w-1/12 text-left  px-1"> AAP</td>
-                      <td className="w-1/12  text-left  px-1"></td>
-                      <td className=" w-1/12 text-left  px-1"></td>
-                      <td className=" w-1/12 text-left px-1"></td>
-                    </tr>
-                    <tr className="bg-gray-100">
-                      <td className="w-1/12 text-left px-1">New</td>
-                      <td className="w-1/12 text-left  px-1">AAP</td>
-                      <td className="w-1/12 text-left  px-1">Won</td>
-                      <td className="w-1/12 text-left  px-1"></td>
-                      <td className="w-1/12 text-left  px-1"></td>
-                      <td className=" w-1/12text-left  px-1"></td>
-                      <td className="w-1/12 text-left  px-1">25,864</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div> */}
             <div className="bg-white p-1  flex max-w-6xl sm:w-full sm:p-4 mt-2.5 h-auto  shadow-lg flex flex-col sm:flex-row  select-none ">
               <div className="text-left   w-full">
                 <h2 className="text-base font-bold  border-b-2 text-xl">
@@ -297,26 +168,7 @@ const inc = () => {
                         </td>
                       </tr>
                       <tr>
-                        {/* <td className="px-1 pt-0 whitespace-no-wrap border-b border-gray-500">
-                          <div className="flex items-center">
-                            <div>
-                              <div className="text-sm leading-9 text-gray-800">
-                                2013
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-1 pt-0 whitespace-no-wrap border-b border-gray-500">
-                          <div className="text-sm leading-9 text-blue-900">
-                            2.1 Crores
-                          </div>
-                        </td>
-                        <td className="px-1 pt-0 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-9">
-                          41.2 Lakhs
-                        </td>
-                        <td className="px-1 pt-0 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-9">
-                          1.7 Crores
-                        </td> */}
+
                       </tr>
                     </tbody>
                   </table>
@@ -344,18 +196,7 @@ const inc = () => {
                 <p className="text-gray-500 flex  leading-9 line-clamp-3 ">
                   Sonia Gandhi (1998-2017 )
                 </p>
-                {/* <p className="text-gray-500 flex  leading-9 line-clamp-3 ">
-                  Gadkari Nitin Jairam (2009-2013 )
-                </p>
-                <p className="text-gray-500 flex  leading-9 line-clamp-3 ">
-                  L.K.ADVANI (2004-2005 )
-                </p>
-                <p className="text-gray-500 flex  leading-9 line-clamp-3 ">
-                  J.P.Nadda ( - Present)
-                </p>
-                <p className="text-gray-500 flex  leading-9 line-clamp-3 ">
-                  Amit Shah (2014 )
-                </p> */}
+
               </div>
             </div>{" "}
           </div>
@@ -483,7 +324,7 @@ const inc = () => {
             </div>
           </div>
         </div>
-        <Footer />
+        
       </div>
     </Layout>
   );

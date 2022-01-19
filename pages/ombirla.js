@@ -1,25 +1,14 @@
-import React from "react";
 import Link from "next/link";
-import { ImFacebook } from "react-icons/im";
+import React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
-import { FaWikipediaW } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
-import NavBar from "../components/NavBar";
-import MenuBar from "../components/MenuBar";
-
-import SearchBar from "../components/SearchBar";
-import Footer from "../components/Footer";
-import Social from "../components/Social";
+import { FaWikipediaW } from "react-icons/fa";
+import { ImFacebook } from "react-icons/im";
+import Layout from "../components/Layout";
 
 const ombirla = () => {
   return (
-    <div>
-      <NavBar />
-      <MenuBar />
-      <Social />
-      <div>
-        <SearchBar />
-      </div>
+    <Layout>
       <div className=" grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 pl-10 pr-10 ">
         {/* grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 */}
         <div className="">
@@ -359,8 +348,7 @@ const ombirla = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

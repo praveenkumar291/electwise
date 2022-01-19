@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const MenuBar = () => {
   const [isMobile, setIsMobile] = useState();
+  const router = useRouter();
+  const currentState = router.asPath.split("/")[1];
+
   return (
     <nav className="navbar pt-4">
       <h3 className="logo">Logo</h3>
@@ -18,13 +22,13 @@ const MenuBar = () => {
         <Link href="/" className="news">
           <li>News</li>
         </Link>
-        <Link href="/" className="parties">
+        <Link href={`/${currentState}/parties`} className="parties">
           <li>Parties</li>
         </Link>
-        <Link href="/" className="politician">
+        <Link href={`/${currentState}/politicians`} className="politician">
           <li>Politicians</li>
         </Link>
-        <Link href="/" className="constituency">
+        <Link href={`/${currentState}/constituencies`} className="constituency">
           <li>Constituencies</li>
         </Link>
         <Link href="/" className="compare">

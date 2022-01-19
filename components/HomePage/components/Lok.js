@@ -28,7 +28,7 @@ const Lok= () => {
                 <p className="text-xs text-gray-400 font-normal">PrimeMinister</p>
               </div>
             </div>
-            <div className="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
+            {/* <div className="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div className="mb-8">
                 <Link href="rahul">
                   <img
@@ -46,8 +46,8 @@ const Lok= () => {
                   Opposition Leader
                 </p>
               </div>
-            </div>
-            <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
+            </div> */}
+            {/* <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div className="mb-8">
                 <Link href="ombirla">
                   <img
@@ -63,7 +63,7 @@ const Lok= () => {
                 <p className="text-l text-black font-bold mb-2"> Om Birla </p>
                 <p className="text-base text-gray-400 font-normal">Speaker</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>

@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import '../styles/model.css'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function MyApp({ Component, pageProps }) {

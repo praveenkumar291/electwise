@@ -245,7 +245,7 @@ export default function PoliticianPage() {
                         </td>
                         <td className="px-1 pt-0 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5"></td>
                         <td className="px-1 pt-0 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                         
+
                         </td>
                       </tr>
 
@@ -260,7 +260,7 @@ export default function PoliticianPage() {
           <div className=" ">
             <section className="min-w-min h-auto mx-auto  sm:px-6 bg-white shadow-lg lg:px-4 py-12">
               <div className="text-left  border-b-2 w-full">
-                <h2 className="text-base font-bold   text-xl">Relatives</h2>
+                <h2 className="text-base font-normal   text-xl">Relatives</h2>
               </div>
               <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
                 {relatives.map((rel) => (

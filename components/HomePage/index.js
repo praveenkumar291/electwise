@@ -1,3 +1,4 @@
+import PopularPoliticiansCard from "../PopularPoliticiansCard";
 import Assembly from "./components/Assembly";
 import Graph from "./components/Graph";
 import Graph3 from "./components/Graph3";
@@ -9,24 +10,24 @@ import Popular from "./components/Popular";
 export default function Home() {
   return (
     <div>
-      <div className="container flex flex-col mx-auto md:flex-row md:items-center md:justify-between  mx-4 pl-10 pr-10">
+      <div className="  container px-4 p-4 mx-auto flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <News />
 
-        <div className="flex-column justify-between m-4">
+        <div className="flex-column  m-3 ">
           <Assembly />
-          &nbsp;
+
           <Lok />
         </div>
-        <div pr-10>
+        <div className="mt-3">
           <Graph />
-          &nbsp;
+
           <Graph3 />
         </div>
       </div>
-      <div className="flex flex-row  ">
-        <div className="flex flex-col justify-between m-4 pl-10 pr-10">
+      <div className="container px-4 p-4 mx-auto flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col  ">
+        <div className="flex flex-col   ">
           <Popular />
-
+          {/* <PopularPoliticiansCard /> */}
           <Parties />
         </div>
       </div>

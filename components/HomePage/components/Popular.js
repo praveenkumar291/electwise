@@ -1,124 +1,68 @@
-import React from "react";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { stateList } from "../../Layout/components/constants";
+
+
+import React, { useEffect, useState } from "react";
 
 const Popular = () => {
+
+  const router = useRouter();
+
+  const [politicianData, setPoliticianData] = useState([]);
+  const getStateName = () => {
+    const slug = router.asPath.split("/")[1];
+    return stateList[slug];
+  };
+  const getPoliticianData = (politicianSlug = getStateName()) => {
+    axios
+
+      .get(
+        `https://www.electwise.in/api/v2/${politicianSlug}/popular-politicians/`
+      )
+      .then(({ data }) => {
+        setPoliticianData(data);
+        console.log(data);
+      })
+      .catch((e) => console.log(e));
+  };
+
+  useEffect(() => {
+    getPoliticianData(window.location.pathname.split("/").pop());
+  }, []);
+
   return (
     <div>
       <div className="w-auto ">
-        <section className="max-w-5xl h-auto mx-auto px-4 sm:px-6 bg-white shadow-lg lg:px-4 py-12">
-          <div className="text-left  border-b-2 w-full">
-            <h2 className="text-base font-bold   text-2xl">Popular Politicians</h2>
+        <section className="max-w-5xl flex-shrink-0 h-auto mx-auto  sm:px-6 bg-white shadow-lg lg:px-4 pt-0">
+          <div className="text-left  border-b w-full">
+            <h2 className="text-base font-normal  text-2xl">
+              Popular Politicians
+            </h2>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6">
-            <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div>
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/Arvind_Kejriwal.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-6 gap-2">
+            {politicianData.map((item) => (
+              <div className="w-full h-auto  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
+                <div>
+                  <Link href={`politician/${item.slug}`}>
+                    <img
+                      className="w-36 h-36  md:w-30 md:h-6rem mx-24px  "
+                      src={item.photo}
+                      alt=""
+                      width="320"
+                      height="222"
+                    />
+                  </Link>
+                </div>
+                <div className="title-card text-base ">
+                  <p className="text-l  w-36 text-white font-normal mb-2">
+                    {item.name}
+                  </p>
+                </div>
               </div>
-              <div className="text-center w-36 text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l text-white font-bold mb-2">Arvind Kejriwal</p>
-              </div>
-            </div>
-            <div className="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div className="card_popular_container">
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem   mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/narendra-modi.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-              <div className="text-center w-36 text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l w-36 text-white font-bold mb-2">
-                  Narendra Modi
-                </p>
-              </div>
-            </div>
-            <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div>
-                <img
-                  className="w-36 h-36  md:w-30"
-                  src="https://www.electwise.in/media/images/people/photo/rahul-gandhi.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-              <div className="text-center text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l w-36 text-white font-bold mb-2">
-                  Rahul Gandhi
-                </p>
-              </div>
-            </div>
-            <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div className="card_popular_container">
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem   mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/Mamata_Banerjee.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-
-              <div className="text-center text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l w-36 text-white font-bold mb-2">
-                  MamataBanerjee
-                </p>
-              </div>
-            </div>
-            <div className="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div c>
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem   mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/Nara_Chandra_Babu_Naidu.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-              <div className="text-center text-base bg-gray-700 bg-opacity-50 ">
-                <p className="text-l w-36 text-white font-bold mb-2">ChandraBabu</p>
-              </div>
-            </div>
-            <div className="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div>
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem   mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/kalvakuntla-chandrashekar-rao.jpg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-              <div className="text-center text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l w-36 text-white font-bold mb-2">
-                  Chandrashekar
-                </p>
-              </div>
-            </div>
-            <div className="w-full  rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
-              <div>
-                <img
-                  className="w-36 h-36  md:w-30 md:h-6rem   mx-24px  "
-                  src="https://www.electwise.in/media/images/people/photo/Akhilesh_Yadav.jpeg"
-                  alt=""
-                  width="320"
-                  height="222"
-                />
-              </div>
-              <div className="text-center text-base bg-gray-700 bg-opacity-50">
-                <p className="text-l w-36 text-white font-bold mb-2">
-                  Akhilesh Yadav
-                </p>
-              </div>
-            </div>
-          </div>
+            ))}
+                      </div>
         </section>
       </div>
     </div>

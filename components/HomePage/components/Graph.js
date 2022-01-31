@@ -21,14 +21,14 @@ const Graph = () => {
 
   return (
     <div>
-      <div class=" max-w-5xl">
-        <section class="w-72 h-auto px-4 sm:px-6 bg-white shadow-lg lg:px-4 ">
-          <div class="text-left  border-b-2 w-full">
-            <h2 class="text-base font-bold   text-2xl">Assembly</h2>
+      <div class=" max-w-md">
+        <section class="w-auto h-auto px-4 sm:px-6 bg-white shadow-lg lg:px-4 ">
+          <div class="text-left  border-b w-full">
+            <h2 class="text-base font-normal   text-xl">Assembly</h2>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1">
             <div class="w-full rounded-none sahdow-lg overflow-hidden flex flex-row justify-center items-center flex">
-              <div className="">
+              <div className="bar-chart">
                 <Pie data={state} />
               </div>
             </div>

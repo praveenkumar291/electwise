@@ -1,11 +1,13 @@
 import React from "react";
+import News from "../../../components/State/News";
+
 import Layout from "../../../components/Layout";
-import Parties from "../../../components/State/Parties";
+
 
 const index = () => {
   return (
     <Layout>
-      <Parties />
+      <News />
     </Layout>
   );
 };

@@ -6,7 +6,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const MenuBar = () => {
   const [isMobile, setIsMobile] = useState();
   const router = useRouter();
-  const currentState = router.asPath.split("/")[1];
+  const currentState = router.asPath.split("/")[1] || 'delhi';
+  console.log(currentState);
 
   return (
     <nav className="navbar pt-4">
@@ -19,7 +20,7 @@ const MenuBar = () => {
         <Link href="/" className="home">
           <li className="home-bar">Home</li>
         </Link>
-        <Link href="/" className="news">
+        <Link href={`/${currentState}/news`} className="news">
           <li>News</li>
         </Link>
         <Link href={`/${currentState}/parties`} className="parties">

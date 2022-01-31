@@ -21,21 +21,21 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="flex flex-col fixed min-w-full">
+      <div className="flex flex-col fixed min-w-full z-40">
         <div className=" overflow-x-auto lg:-mx-8  ">
           <div className=" align-middle inline-block min-w-full  lg:px-8   ">
             <div className="shadow overflow-hidden border-gray-200 sm:-l ">
-              <table className="min-w-full divide-y divide-white  z-50">
-                <thead className="bg-gray-50"></thead>
+              <table className="min-w-full divide-y divide-white ">
+
                 <tbody className="bg-pink-900">
                   <tr>
                     <td className=" py-4 ">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-8 w-40"></div>
+                        <div className=" state_button"></div>
 
-                        <div className="text-xl text-white  text-bold border border-8 border-light-blue-500 ...   flex space-x-4">
+                        <div className="text-xs text-white  text-normal border border-b border-light-blue-500 ...   flex flex-row">
                           <button
-                            className=" flex items-center justify-center rounded-md  text-white"
+                            className=" flex items-center justify-center rounded-s  text-white"
                             type="submit"
                             onClick={() => {
                               setOpenModel(true);
@@ -57,7 +57,7 @@ const NavBar = () => {
                         )}
                       </div>
                     </td>
-                    <td className=" flex flex-row col-md-auto px-8 py-6  align-center items-center  width: 200px ">
+                    <td className=" flex flex-row  md:flex-col  px-8 py-6  align-center items-center  width: 200px  header-im">
                       <img
                         className=""
                         src="https://www.electwise.in/static/templates/marx/img/logo1.png"

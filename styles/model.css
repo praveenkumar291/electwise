@@ -32,6 +32,34 @@
   overflow-y: hidden;
   left: 25%;
 }
-a {
-  
+@media screen and (max-width: 780px) {
+
+.model-container {
+  position: relative;
+/* display: flex; */
+flex-direction: column;
+width: 70%;
+pointer-events: auto;
+background-color: #fff;
+/* background-clip: padding-box; */
+border: 1px solid rgba(0,0,0,.2);
+border-radius: .3rem;
+outline: 0;
+margin-right:20px;
+margin-left:0px;
+padding:2px;
+
+}
+
+
+}
+
+@media screen and (max-width: 780px){
+ .moble-view{
+  flex-direction: row;
+  display: flex;
+  padding: 0.75rem !important;
+  width: auto;
+
+ }
 }

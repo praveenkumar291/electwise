@@ -1,61 +1,76 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Link from "next/link";
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { stateList } from "../../Layout/components/constants";
+
+
+
+
+
+
 
 const News = () => {
-  return (
-    <div>
-      <div className="bg-white flex flex-col flex-no-shrink mx-auto  h-auto w-auto  shadow-lg md:flex-shrink-0 overflow-hidden ">
-        <div className="card-title">
-          <h1 className="card-title-one">News</h1>
-          {/* <p>vhmvdjafdkaudfashvkuqwdyfvjhdvaskuydfqwvukd</p> */}
-        </div>
-        <div className="image-container1">
-          <img
-            className="w-36 h-25  md:w-30 md:h-auto md:rounded-none rounded-none mx-auto "
-            src="https://www.electwise.in/media/images/news/2021/01/11/ap-hc.jpeg"
-            alt=""
-            width="320"
-            height="222"
-          />
-          <p className="img_content">AP HC squashes SEC order</p>
-        </div>
-        <div className="image-container1">
-          <img
-            className="w-36 h-25 md:w-30 md:h-auto md:rounded-none rounded-none mx-auto "
-            src="https://www.electwise.in/media/images/news/2021/01/11/sc-disappointed-with-govern.jpg"
-            alt=""
-            width="320"
-            height="222"
-          />
-          <p className="img_content">Hold farm laws or we will, SC to Centre</p>
-        </div>
-        <div className="image-container1">
-          <img
-            className="w-36 h-25 md:w-30 md:h-auto md:rounded-none rounded-none mx-auto "
-            src="https://www.electwise.in/media/images/news/2021/01/11/AP-CM-launches-2nd-phase-o.jpg"
-            alt=""
-            width="320"
-            height="222"
-          />
-          <p className="img_content">
-            AP CM launches 2nd phase of Jagananna Amma Vodi
-          </p>
-        </div>
-        <div className="image-container1">
-          <img
-            className="w-36 h-25 md:w-30 md:h-auto md:rounded-none rounded-none mx-auto "
-            src="https://www.electwise.in/media/images/news/2021/01/11/gdp.jpg"
-            alt=""
-            width="320"
-            height="222"
-          />
-          <p className="img_content">Social Sector Investments</p>
-        </div>
-        <div className="img_content-end">
-          <p>More News</p>
-        </div>
-      </div>
-    </div>
-  );
+  const router = useRouter();
+
+  const [results, setResults] = useState([]);
+  const getStateName = () => {
+    const slug = router.asPath.split("/")[1];
+    return stateList[slug];
+  };
+
+
+  const getNews = (newsslug= getStateName()) => {
+
+    axios
+      .get(`https://www.electwise.in/api/v2/news/?state=andhra-pradesh`)
+      .then(({ data }) => {
+        setResults(data.results.slice(1, 5));
+        console.log(data);
+      })
+      .catch((e) => console.log(e));
+
+
+
+
+  };
+  useEffect(() => {
+   getNews(window.location.pathname.split("/").pop())
+
+  },[])
+
+
+
+
+
+ return (
+   <div>
+     <div className="bg-white flex flex-col flex-no-shrink  h-auto   w-auto  shadow-lg md:flex-shrink-0 overflow-hidden ">
+       <div className="card-title">
+         <h1 className="card-title-one">News</h1>
+       </div>
+       {results.map((item, i) => (
+         <div className="image-container1">
+           <img
+             className="w-20 h-25  md:w-30 md:h-auto md:rounded-none rounded-none mx-auto "
+             src={item.featured_image}
+             alt=""
+             width="320"
+             height="222"
+           />
+
+           <Link href={`/newspage/${item.slug}`}>
+
+             <p className="img_content">{item.title}</p>
+           </Link>
+         </div>
+       ))}
+       <div className="img_content-end">
+         <p>More News</p>
+       </div>
+     </div>
+   </div>
+ );
 }
 
 export default News
